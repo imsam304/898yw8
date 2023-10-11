@@ -37,3 +37,311 @@
     display: inline-block;
     margin: 3px;
 }
+
+
+/* Common styles for all screen sizes */
+.search-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+    background-color: transparent;
+}
+
+.search {
+    position: absolute;
+    padding: 10px;
+    margin-bottom: 12px;
+    min-width: 90%;
+    max-width: 90%;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.search .searchTerm {
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 15px; /* Increase padding for larger height */
+    width: 90%;
+    height: 60px; /* Increase height for larger screens */
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+    cursor: pointer;
+    font-size: 24px; /* Default font size for screens */
+    background-color: transparent;
+    transition: border-color 0.3s ease;
+}
+
+.search .searchTerm:focus {
+    color: #00B4CC;
+    border-color: #00B4CC;
+}
+
+.search .searchTerm::placeholder {
+    color: transparent;
+}
+
+.search .searchButton {
+    width: 60px; /* Increase button size for larger screens */
+    height: 60px; /* Increase button size for larger screens */
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 24px; /* Increase font size for larger screens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.search .searchButton:hover {
+    background-color: #0099b4;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 467px) {
+    .search .searchTerm {
+        font-size: 16px; /* Adjust font size for smaller screens */
+        height: 50px; /* Adjust height for smaller screens */
+    }
+
+    .search .searchButton {
+        font-size: 18px; /* Adjust font size for smaller screens */
+        width: 50px; /* Adjust button size for smaller screens */
+        height: 50px; /* Adjust button size for smaller screens */
+    }
+}
+
+@media screen and (min-width: 468px) and (max-width: 767px) {
+    .search .searchTerm {
+        font-size: 18px;
+        height: 55px;
+    }
+
+    .search .searchButton {
+        font-size: 20px;
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .search .searchTerm {
+        font-size: 24px;
+        height: 60px;
+    }
+
+    .search .searchButton {
+        font-size: 24px;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .search .searchTerm {
+        font-size: 32px; /* Adjust font size for larger screens */
+        height: 85px; /* Adjust height for larger screens */
+    }
+
+    .search .searchButton {
+        font-size: 32px; /* Adjust font size for larger screens */
+        width: 85px; /* Adjust button size for larger screens */
+        height: 85px; /* Adjust button size for larger screens */
+    }
+}
+
+
+/* Add this CSS code to your existing stylesheet */
+ @import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap");
+            html,
+            body {
+                font-family: "Baloo Da 2";
+            }      
+.navbar {            
+            height: 120px;            
+        }
+
+/* Default styles for all screen sizes */
+.movie-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 8px;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 380px) {
+    .movie-card {
+        font-size: 12px;
+        min-height: 240px;
+        min-width: calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+    .movie-card .image-container {
+        height: 192px;
+    }
+}
+
+@media screen and (min-width: 381px) {
+    .movie-card {
+        font-size: 14px;
+        min-height: 300px;
+        min-width: calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+    .movie-card .image-container {
+        height: 240px;
+    }
+}
+
+@media screen and (min-width: 468px) and (max-width: 767px) {
+    .movie-card {
+        font-size: 16px;
+        min-height: 300px;
+        min-width: calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+    .movie-card .image-container {
+        height: 240px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .movie-card {
+        font-size: 18px;
+        min-width: calc(25% - 10px);
+        max-width: calc(25% - 10px);
+    }
+    .movie-card .image-container {
+        height: 288px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .movie-card {
+        font-size: 22px;
+        min-width: calc(20% - 20px);
+        max-width: calc(20% - 20px);
+    }
+    .movie-card .image-container {
+        height: 480px;
+    }
+}
+
+/* Style for the movie card */
+.movie-card {
+    background-color: #131313;
+    color: #fff;
+    padding: 0;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* Style for the movie card image container */
+.movie-card .image-container {
+    position: relative;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-width: 100%;
+    overflow: hidden;
+}
+
+/* Style for the overlay data */
+.movie-card .quality {
+    position: absolute;
+    top: 8px; /* Add space from the top */
+    right: 8px; /* Add space from the right */
+    border-radius: 2px 2px 2px 2px; /* Rounded border on the top-left corner */
+    background-color: #001c55; /* Background color for the overlay */
+    color: #fff; /* Text color for the overlay */
+    padding: 3px 6px 0 6px; /* Padding for the overlay (adjust as needed) */
+    font-weight: bold;
+    font-size: 10px; /* Adjust the font size as needed */
+}
+.movie-card .notice {
+    position: absolute;
+    top: 8px; /* Add space from the top */
+    left: 8px; /* Add space from the right */
+    border-radius: 2px 2px 2px 2px; /* Rounded border on the top-left corner */
+    background-color: #FF0000; /* Background color for the overlay */
+    color: #fff; /* Text color for the overlay */
+    padding: 3px 6px 0 6px; /* Padding for the overlay (adjust as needed) */
+    font-weight: bold;
+    font-size: 10px; /* Adjust the font size as needed */
+}
+.movie-card .image-container .language {
+    position: absolute;
+    bottom: 0;
+    left: 0; /* Add space from the right */
+    border-radius: 0 2px 0 0; /* Rounded border on the top-left corner */
+    background-color: #5f8f00; /* Background color for the overlay */
+    color: #fff; /* Text color for the overlay */
+    padding: 3px 4px 0 4px; /* Padding for the overlay (adjust as needed) */
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 10px; /* Adjust the font size as needed */
+}
+.movie-card .image-container .type {
+    position: absolute;
+    bottom: 0;
+    right: 0; /* Add space from the right */
+    border-radius: 2px 0 0 0; /* Rounded border on the top-left corner */
+    background-color: #FF0000; /* Background color for the overlay */
+    color: #fff; /* Text color for the overlay */
+    padding: 3px 4px 0 4px; /* Padding for the overlay (adjust as needed) */
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 10px; /* Adjust the font size as needed */
+}
+
+/* Style for the movie card image */
+.movie-card .image-container img {
+    width: 100%; /* Set image width to 100% to fit the container */
+    height: 100%; /* Automatically adjust the image height while maintaining aspect ratio */
+    border-top-left-radius: 4px; /* Add border radius to the top-left corner */
+    border-top-right-radius: 4px; /* Add border radius to the top-right corner */
+    transition: transform 0.3s, opacity 0.3s; /* Add transitions for transform and opacity */
+}
+
+
+/* Hover effect for the movie card image */
+.movie-card .image-container:hover img {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    transform: translateY(-10px); /* Move the image up by 5px on hover */
+    opacity: 0.5; /* Reduce opacity on hover */
+}
+
+/* Style for other content */
+.movie-card .content {
+    position: relative;
+    height: 60px; /* Set content height to 30% of card height */
+    padding: 5px; /* Add padding for title and other content */
+    overflow: hidden; /* Hide content overflow */
+}
+
+/* Style for truncated text */
+.movie-card .content a {
+    margin-top: 3px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    max-height: 3.2em; /* Adjust the value for two lines of text */
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff !important; /* Dim white color */
+}
+
+/* Highlight text color on hover within .movie-card */
+.movie-card a:hover {
+    color: #4e73df !important; /* White color on hover with !important */
+}
